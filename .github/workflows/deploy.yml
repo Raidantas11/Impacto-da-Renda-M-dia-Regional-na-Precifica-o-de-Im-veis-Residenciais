@@ -21,11 +21,31 @@ jobs:
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY_1 }}
         port: 22
-        script: |
-  cd /home/raimundo/Impacto-da-Renda-M-dia-Regional-na-Precifica-o-de-Im-veis-Residenciais
-  
-       
+        name: Deploy para Azure VM
 
-          git pull origin Master
-       
+on:
+  push:
+    branches:
+      - Master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd /home/raimundo/Impacto-da-Renda-M-dia-Regional-na-Precifica-o-de-Im-veis-Residenciais || git clone https://github.com/Raidantas11/Impacto-da-Renda-M-dia-Regional-na-Precifica-o-de-Im-veis-Residenciais.git
+            cd Impacto-da-Renda-M-dia-Regional-na-Precifica-o-de-Im-veis-Residenciais
+            git pull origin Master
+
 
