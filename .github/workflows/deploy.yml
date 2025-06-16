@@ -3,7 +3,7 @@ name: Deploy para Azure VM
 on:
   push:
     branches:
-      - main
+      - Master
 
 jobs:
   deploy:
@@ -22,5 +22,5 @@ jobs:
         port: 22
         script: |
           cd /caminho/do/seu/app
-          git pull origin main
+          git pull origin Master
           # outros comandos que quiser executar na VM
