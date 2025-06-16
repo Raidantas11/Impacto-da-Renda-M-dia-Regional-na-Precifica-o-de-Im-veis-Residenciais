@@ -16,9 +16,10 @@ jobs:
     - name: Deploy via SSH
       uses: appleboy/ssh-action@v0.1.7
       with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        host: ${{ secrets.20.38.41.185 }}
+        username: ${{ secrets.raimundo }}
+        key: ${{ secrets.ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsTEYwOXZrD5vOcOdjrW2E4UpAeO5cPXqkWCSMIwJGN/R4nBtZOysHNZjcL2Wc8PuGPGVvGqHlzDNNQ1e6I/vhF7/FrbsHrbUYIWyTSw7jhW/BdYziBic2QbwSgD4H/cpEWBu2kDnwI5fruzjQbyUg1UB7S3U6NeDOmKeYGyHiIWS41+UKNOU9MG4cOr616+4ysV5OTLR+qXtWLPvpcV+CYaspAZK0+xPi/gcWZcHiATgeZEG8dJDoegdFHAu5E9as+xjAWmfdDUlRkFX8D1GMK/L/VD+qYy+IF2/1FqXFJr+zUkC7xNMJxFhG50gZEAOH7nny8BATo4OeFU4IYeEZ raimundo@SandboxHost-638856895897397185
+ }}
         port: 22
         script: |
           cd /caminho/do/seu/app
