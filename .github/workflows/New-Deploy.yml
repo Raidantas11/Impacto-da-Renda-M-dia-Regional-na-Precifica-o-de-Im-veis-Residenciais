@@ -3,7 +3,7 @@ name: Deploy para Azure App Service
 on:
   push:
     branches:
-      - Master
+      - Master  
 
 jobs:
   build-and-deploy:
@@ -21,9 +21,6 @@ jobs:
       - name: Deploy para Azure WebApp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: nome-do-meu-app  # troque pelo nome do seu App Service
+          app-name: nome-do-meu-app  # substitua pelo nome do seu App Service
           slot-name: production
-          publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
           package: .
-
-            # outros comandos de build/deploy
