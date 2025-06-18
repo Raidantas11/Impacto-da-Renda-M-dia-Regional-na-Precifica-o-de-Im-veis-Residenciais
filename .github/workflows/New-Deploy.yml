@@ -21,6 +21,6 @@ jobs:
       - name: Deploy para Azure WebApp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: nome-do-meu-app  # substitua pelo nome do seu App Service
+          app-name: nome-do-meu-app 
           slot-name: production
           package: .
